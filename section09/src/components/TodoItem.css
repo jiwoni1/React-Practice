@@ -1,0 +1,30 @@
+.TodoItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.TodoItem input {
+  width: 20px;
+}
+
+.TodoItem .content {
+  flex: 1;
+  /* 화면에 늘어날 수 있는만큼 길게 */
+}
+
+.TodoItem .date {
+  font-size: 14px;
+  color: gray;
+}
+
+.TodoItem button {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: gray;
+  font-size: 14px;
+}
