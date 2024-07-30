@@ -1,5 +1,9 @@
+import { useParams } from "react-router-dom";
+
 const Edit = () => {
-  return <div>Edit</div>;
+  const params = useParams();
+
+  return <div>{params.id}번 다이어리 수정페이지</div>;
 };
 
 export default Edit;
