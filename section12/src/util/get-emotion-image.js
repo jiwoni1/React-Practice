@@ -1,3 +1,5 @@
+// emotion 이미지를 불러오는 코드 분리
+// 많은 import문 때문에
 import emotion1 from "./../assets/emotion1.png";
 import emotion2 from "./../assets/emotion2.png";
 import emotion3 from "./../assets/emotion3.png";
