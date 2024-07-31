@@ -10,26 +10,26 @@ import Notfound from "./pages/Notfound";
 const mockData = [
   {
     id: 1,
-    createDate: new Date().getTime(),
+    createdDate: new Date("2024-07-31").getTime(),
     emotionId: 1,
     content: "1번일기 테스트",
   },
   {
     id: 2,
-    createDate: new Date().getTime(),
+    createdDate: new Date("2024-07-30").getTime(),
     emotionId: 2,
     content: "2번일기 테스트",
   },
   {
     id: 3,
-    createDate: new Date().getTime(),
+    createdDate: new Date("2024-06-13").getTime(),
     emotionId: 3,
     content: "3번일기 테스트",
   },
 ];
 
-const DiaryStateContext = createContext();
-const DiaryDispatchContext = createContext();
+export const DiaryStateContext = createContext();
+export const DiaryDispatchContext = createContext();
 
 function reducer(state, action) {
   switch (action.type) {
@@ -86,29 +86,6 @@ function App() {
 
   return (
     <>
-      <button
-        onClick={() => {
-          onCreate(new Date().getTime(), 1, "테스트");
-        }}
-      >
-        일기 추가 테스트
-      </button>
-
-      <button
-        onClick={() => {
-          onUpdate(1, new Date().getTime(), 2, "수정");
-        }}
-      >
-        일기 수정 테스트
-      </button>
-
-      <button
-        onClick={() => {
-          onDelete(1);
-        }}
-      >
-        일기 삭제 테스트
-      </button>
       <DiaryStateContext.Provider value={data}>
         <DiaryDispatchContext.Provider value={{ onCreate, onDelete, onUpdate }}>
           <Routes>
