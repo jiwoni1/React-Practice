@@ -3,6 +3,8 @@ import { DiaryStateContext } from "../App";
 import Header from "../components/Header";
 import Button from "../components/Button";
 import DiaryList from "../components/DiaryList";
+import usePageTitle from "../hooks/usePageTitle";
+usePageTitle;
 
 const getMonthlyData = (pivotDate, data) => {
   const beginTime = new Date(
@@ -33,7 +35,8 @@ const Home = () => {
   const [pivotDate, setPivotDate] = useState(new Date()); // 기준이 되는 날짜
 
   const monthlyData = getMonthlyData(pivotDate, data);
-  console.log(monthlyData);
+
+  usePageTitle("감정 일기장");
 
   const onIncreaseMonth = () => {
     setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1));
